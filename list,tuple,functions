@@ -1,0 +1,44 @@
+list1=[1,2.2,'hi',True,1,1,3,4,1,7,1]  #any data type ie heterogenous
+print(list1[0:3])  #print vlues at indices 0,1,2
+list1[0]=10  #mutable
+#list.remove removes the value only from the first occurance
+while(1 in list1):
+  list1.remove(1)
+  print(list1)
+#delete(del) is global function can be used for any data type and remove is specified for list data type 
+list2=[99,88,77,66]
+list1+=list2
+print(list1)
+list1.append(list2)
+print(list1)  #nested list
+for i in list2:
+  list1.append(i)
+print(list1)
+list1.extend(list2)
+print(list1)
+list3=[100,200,300]
+list1.extend(list2+list3)
+print(list1)
+list2.sort(reverse=True)
+print(list2)
+
+
+l1=[10,20,30]
+l2=[40,50,60]
+l1=l2
+l2.append(70)
+print(l1)
+#because now they both point to same address so any change made on any list will reflect on both
+#deep copy
+
+l1=[10,20,30]
+l2=[40,50,60]
+l2=l1.copy()
+l2.append(70)
+print(l1)
+#shallow copy
+
+
+#pop gives output and remove doesnot
+
+
