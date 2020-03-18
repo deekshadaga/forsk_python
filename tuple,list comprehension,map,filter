@@ -1,0 +1,112 @@
+#tuples are read only can't be modified ie immutable
+#like we use const keyword in case of c
+t=(1,2,3,4,5)
+t1=(10,20,13)
+print(t1.index(20))
+t2=(1,20,3,20,20)
+print(t2.count(20))
+t3=(2)
+print(type(t3))
+t4=(2,)
+print(type(t4))
+t5=(2.4,40,True,6)
+print(t5)
+print(t5.count(True))
+print(divmod(23,5))#print quotient and remainder ie 23//5 and 23%5
+#returns in the form of tuple and mostly functions when return multiple values return in the form of tuple
+x,y=divmod(24,5)#called as unpacking
+print(x,y)
+#x,y,z=divmod(22,5)#ValueError: not enough values to unpack (expected 3, got 2)
+x,x=divmod(23,5)
+print (x)#print the last value assigned to x
+
+
+#list comprehension
+list1=[1,2,3,4,5]
+list2=[i**2 for i in list1]
+print(list2)
+list3=[i+1 for i in list1]
+print(list3)
+
+
+#map
+def f1(x):
+  return x*x
+l1=list(map(f1,list1))
+print(l1)
+'''
+if you already have a list of values and you want to do the exact same operation on each of the elements in the array
+and return the same amount of items in the list,in these type of situations it is better to use the map method
+'''
+
+
+list1=['ram','shyam','sita']
+def f2(str1):
+  return len(str1)
+l2=list(map(f2,list1))
+print(l2)
+
+
+list1=[1,2,3,4,5,6]
+def f3(x):
+  return x**3
+l3=list(map(f3,list1))
+print(l3)
+
+
+
+list1=[1,20,3,10,4,12]
+
+def f4(x):
+  if(x>10):
+    return True
+  else:
+    return False
+print(f4(7))
+print(f4(11))
+l4=list(filter(f4,list1))#only used when function is returning true or false
+print(l4)
+
+
+l5=list(filter(lambda x : x>10,list1)) #can use lambda for defining function 
+print(l5)
+
+list1=['ram','shyam']
+ll=list(map(lambda str1: len(str1),list1))
+print(ll)
+lll=[len(i) for i in list1]
+print(lll)
+
+
+'''
+if you already havelist of values but you only want to have items in the array that match certain criteria , in these types 
+of situations it is better to use the filter method
+'''
+
+
+#reduce
+import functools #reduce method is defined in it
+list1=[1,2,3,4,5,6,7,8,9,10]
+def f5(x,y):
+  return x+y
+a=functools.reduce(f5,list1)
+print(a)
+b=functools.reduce(lambda x,y:x+y,list1)
+print(b)
+c=functools.reduce(lambda x,y:x*y,list1)
+print(c)
+
+
+'''
+if you already have a list of values,but you want to use the values in that list to create something completely new,
+in these type of situations it is better to use the reduce method 
+'''
+
+#hadoop,spark,databricks--> map-reduce-->sanjay ghemawat 
+#any pure functional programming language uses recursion not loops eg-erricson,erlang
+
+str1='abcd'
+print(list(map(lambda x:x*3,str1)))
+
+
+
