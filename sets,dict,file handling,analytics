@@ -1,0 +1,195 @@
+#set
+#dictionary
+#file handling
+#data analyics
+
+#############################
+#sets
+
+s1={1,2,3,4,5}
+len(s1)
+type(s1)
+
+s2={3,4,5,6,7}
+s1.intersection(s2) #intersection means common elements in both set
+
+#if we want the unquie value we use set ,it also sort the data
+list1=[11,2,3,4,4,5,2,7]
+set(list1)
+
+str1="aaaabbbbcccddee"
+set(str1)
+
+
+s1={1,2,3,4,5}
+s2={3,4,5,6,7}
+s1.union(s2) #union means join both sets value
+s1.difference(s2) #wo set of jo s1 mai hai but s2 m nhi hai
+s2.difference(s1)
+
+#in sets we can remove or add value like list and set can't induce index
+s1.add(8)
+s1.remove(8)
+  
+#name the student who present in both days
+a1=["ram","sita","renu"]
+a2=["ram","gita"]
+
+set(a1).intersection(set(a2))
+
+###############################################3
+
+#dictionary(in it we store key and value)
+
+country_name=["india","pakistan","japan","england"]
+capital_name=["delhi","islamabad","tokyo","london"]
+
+capital_name[2]
+list(zip(country_name,capital_name))
+##or
+#syntax:--
+#dict={key:value} they are mutable
+#use in record maintenance
+
+dict1={'india':'delhi',
+       'pakistan':'islamabad',
+       'japan':'tokyo'}
+dict1['india']
+
+ 
+dict2={
+       "dsa":[10,20],
+       "maths":30,
+       "os":16,
+       20:"aman"
+       }
+dict2["dsa"]
+dict2["os"]=23
+dict2[20]
+
+#if we want access only key,values or both
+dict1.keys()
+dict1.values()
+dict1.items()
+
+#we can make dict.in dict also(known as nested dict.)
+dict2={
+       "dsa":{"mt1":10,"mt2":20},
+       "maths":30,
+       "os":16,
+       20:"aman"
+       }
+dict2["dsa"]
+dict2["dsa"]["mt1"]
+
+
+
+dict3={}#if can declare empty dict.also
+type(dict3)
+s2={1,}
+type(s2)
+s1=set()#empty set declaration
+type(s1)
+
+##################################3
+#file handling 
+#(how can we read and write data from file ka fh)
+#first we have to establish the connection with file then perform the operation
+"""read
+   write
+   append"""
+
+fp = open("hello.txt","r")
+print(fp.read())
+fp.close()
+
+
+fp = open("hello.txt","r")
+str1=fp.read()
+fp.close()
+
+
+fp = open("hello.txt","r")
+fp.readline() #to read the data one by one
+fp.close()
+
+
+fp = open("hello.txt","r")
+fp.readlines()[1] #to read that specific indx no. data or item
+
+fp.read()
+fp.read()
+
+"""this happens because when we first read the data the curser will to the end and at the end 
+their is nothing to read"""
+
+"""to write in the file :---- use have first make the file or in write mode we have made file first"""
+
+fp = open("new.txt","w")
+fp.write("hello world")
+fp.close()
+
+"""to append in file"""
+
+fp = open("new.txt","a")
+fp.write("hi pri")
+fp.close()
+
+#to add the data in new line in next line
+fp = open("new.txt","a")
+fp.write("\n #dee how are you")
+fp.close()        
+
+###########################################################
+"""data analatics"""
+""" predictable DA called advance DA""" 
+"""use three library in DA :-- matplotlib, numpy(numerical python), pandas(panel data set)"""
+"""basic of Matplotlib"""
+
+import matplotlib.pyplot as plt
+
+x=[1,2,3,4,5,6,7,8,9,10]
+y=[1,2,3,4,5,6,7,8,9,10]
+
+#setting the title
+plt.title("A line Graph")
+
+#setting the X label
+plt.xlabel("X")
+
+#setting the Y label
+plt.ylabel("Y")
+
+#displaying the grid
+plt.grid(True)
+
+#changing the x axis limits of the graph
+plt.xlim(0,10)
+
+#changing the y axis limits of the graph
+plt.ylim(0,10)
+
+#or
+#plt.axis([0,10,0,10])
+
+#showing the points on graph
+plt.scatter(x,y)
+
+#simple line plot
+plt.plot(x,y)
+
+#plt.savefig("graph.jpg")
+
+#plt.show()
+
+#changing the color of the line
+plt.plot(x,y,color='green')
+plt.plot(x,y,color="#FF0000") #1-red,2-green,3-blue ...that mean we highlight red by FF
+         
+#changing the style of the line
+plt.plot(x,y,linestyle ='dashed')    
+#solid dashed  dashdor dotted
+
+#for plotting scatter plot
+plt.plot(x,y,'d',color='red')     
+#o . , x + v ^ < > s d
